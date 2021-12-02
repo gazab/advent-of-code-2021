@@ -1,15 +1,33 @@
 package main
 
+import (
+	"flag"
+	"fmt"
+	"time"
+)
+
 func main() {
 
-	// TODO: Parameters and reflection!
+	currentDay := GetDayString()
+	debugPtr := flag.Bool("debug", false, "true/false")
+	dayPtr := flag.String("day", currentDay, "01-24")
+	flag.Parse()
 
-	filePath := "./02/example.txt"
-	//filePath := "./02/input.txt"
-	debug := false
+	filePath := "./" + *dayPtr + "/example.txt"
+	debug := *debugPtr
 
-	//Solve01A(StringArrayToIntArray(ReadFile((filePath))))
-	//Solve01B(StringArrayToIntArray(ReadFile((filePath))))
+	switch *dayPtr {
+	case "01":
+		Solve01A(StringArrayToIntArray(ReadFile((filePath))))
+		Solve01B(StringArrayToIntArray(ReadFile((filePath))))
+	case "02":
+		Solve02A((ReadFile((filePath))), debug)
+		Solve02B((ReadFile((filePath))), debug)
+	}
 
-	Solve02B((ReadFile((filePath))), debug)
+}
+
+func GetDayString() string {
+	day := time.Now().Day()
+	return fmt.Sprintf("%02d", day)
 }

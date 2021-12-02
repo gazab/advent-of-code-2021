@@ -12,13 +12,22 @@ func main() {
 
 	currentDay := GetDayString()
 	debugPtr := flag.Bool("debug", false, "true/false")
+	examplePtr := flag.Bool("example", false, "Use example input")
 	dayPtr := flag.String("day", currentDay, "01-24")
 	flag.Parse()
 
-	filePath := "./data/" + *dayPtr + "/example.txt"
-	debug := *debugPtr
+	// File path from parameters
+	fileName := "input.txt"
+	if *examplePtr {
+		fileName = "example.txt"
+	}
+	filePath := "./data/" + *dayPtr + "/" + fileName
 
-	switch *dayPtr {
+	solver(*dayPtr, filePath, *debugPtr)
+}
+
+func solver(day string, filePath string, debug bool) {
+	switch day {
 	case "01":
 		Solve01A(util.StringArrayToIntArray(util.ReadFile((filePath))))
 		Solve01B(util.StringArrayToIntArray(util.ReadFile((filePath))))
@@ -26,7 +35,6 @@ func main() {
 		Solve02A(util.ReadFile((filePath)), debug)
 		Solve02B(util.ReadFile((filePath)), debug)
 	}
-
 }
 
 func GetDayString() string {

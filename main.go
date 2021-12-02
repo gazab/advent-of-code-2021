@@ -2,9 +2,14 @@ package main
 
 func main() {
 
-	//filePath := "./01/example.txt"
-	filePath := "./01/input.txt"
+	// TODO: Parameters and reflection!
 
-	Solve01A(StringArrayToIntArray(ReadFile((filePath))))
-	Solve01B(StringArrayToIntArray(ReadFile((filePath))))
+	filePath := "./02/example.txt"
+	//filePath := "./02/input.txt"
+	debug := false
+
+	//Solve01A(StringArrayToIntArray(ReadFile((filePath))))
+	//Solve01B(StringArrayToIntArray(ReadFile((filePath))))
+
+	Solve02B((ReadFile((filePath))), debug)
 }

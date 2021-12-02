@@ -4,6 +4,8 @@ import (
 	"flag"
 	"fmt"
 	"time"
+
+	"github.com/gazab/advent-of-code-2021/util"
 )
 
 func main() {
@@ -18,11 +20,11 @@ func main() {
 
 	switch *dayPtr {
 	case "01":
-		Solve01A(StringArrayToIntArray(ReadFile((filePath))))
-		Solve01B(StringArrayToIntArray(ReadFile((filePath))))
+		Solve01A(util.StringArrayToIntArray(util.ReadFile((filePath))))
+		Solve01B(util.StringArrayToIntArray(util.ReadFile((filePath))))
 	case "02":
-		Solve02A((ReadFile((filePath))), debug)
-		Solve02B((ReadFile((filePath))), debug)
+		Solve02A(util.ReadFile((filePath)), debug)
+		Solve02B(util.ReadFile((filePath)), debug)
 	}
 
 }

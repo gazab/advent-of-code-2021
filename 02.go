@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	"github.com/gazab/advent-of-code-2021/util"
 )
 
 func Solve02A(input []string, debug bool) {
@@ -15,7 +17,7 @@ func Solve02A(input []string, debug bool) {
 		}
 		instruction := strings.Split(s, " ")
 		command := instruction[0]
-		arg := ToInt(instruction[1])
+		arg := util.ToInt(instruction[1])
 
 		switch command {
 		case "forward":
@@ -43,7 +45,7 @@ func Solve02B(input []string, debug bool) {
 		}
 		instruction := strings.Split(s, " ")
 		command := instruction[0]
-		arg := ToInt(instruction[1])
+		arg := util.ToInt(instruction[1])
 
 		switch command {
 		case "forward":

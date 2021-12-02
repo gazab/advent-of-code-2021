@@ -1,8 +1,8 @@
-package main
+package util
 
 import "strconv"
 
-func check(e error) {
+func Check(e error) {
 	if e != nil {
 		panic(e)
 	}
@@ -10,7 +10,7 @@ func check(e error) {
 
 func ToInt(input string) int {
 	value, err := strconv.Atoi(input)
-	check(err)
+	Check(err)
 
 	return value
 }

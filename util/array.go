@@ -1,4 +1,4 @@
-package main
+package util
 
 import (
 	"strconv"
@@ -10,7 +10,7 @@ func StringArrayToIntArray(input []string) []int {
 
 	for _, x := range input {
 		value, err := strconv.Atoi(x)
-		check(err)
+		Check(err)
 		result = append(result, value)
 	}
 

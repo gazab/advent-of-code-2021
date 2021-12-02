@@ -1,4 +1,4 @@
-package main
+package util
 
 import (
 	"os"
@@ -7,7 +7,7 @@ import (
 
 func ReadFile(filepath string) []string {
 	dat, err := os.ReadFile(filepath)
-	check(err)
+	Check(err)
 	lines := strings.Split(string(dat), "\n")
 	return CleanStringArray(lines)
 }

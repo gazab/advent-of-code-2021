@@ -13,7 +13,7 @@ func main() {
 	dayPtr := flag.String("day", currentDay, "01-24")
 	flag.Parse()
 
-	filePath := "./" + *dayPtr + "/example.txt"
+	filePath := "./data/" + *dayPtr + "/example.txt"
 	debug := *debugPtr
 
 	switch *dayPtr {

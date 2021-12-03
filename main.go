@@ -29,11 +29,14 @@ func main() {
 func solver(day string, filePath string, debug bool) {
 	switch day {
 	case "01":
-		Solve01A(util.StringArrayToIntArray(util.ReadFile((filePath))))
-		Solve01B(util.StringArrayToIntArray(util.ReadFile((filePath))))
+		Solve01A(util.StringSliceToIntSlice(util.ReadFile(filePath)))
+		Solve01B(util.StringSliceToIntSlice(util.ReadFile(filePath)))
 	case "02":
-		Solve02A(util.ReadFile((filePath)), debug)
-		Solve02B(util.ReadFile((filePath)), debug)
+		Solve02A(util.ReadFile(filePath), debug)
+		Solve02B(util.ReadFile(filePath), debug)
+	case "03":
+		//Solve03A(util.ReadFile(filePath), debug)
+		Solve03B(util.ReadFile(filePath), debug)
 	}
 }
 

@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func StringArrayToIntArray(input []string) []int {
+func StringSliceToIntSlice(input []string) []int {
 	var result []int
 
 	for _, x := range input {
@@ -17,7 +17,19 @@ func StringArrayToIntArray(input []string) []int {
 	return result
 }
 
-func CleanStringArray(input []string) []string {
+func BinaryStringSliceToIntSlice(input []string) []int {
+	var result []int
+
+	for _, x := range input {
+		value, err := strconv.ParseInt(x, 2, 64)
+		Check(err)
+		result = append(result, int(value))
+	}
+
+	return result
+}
+
+func CleanStringSlice(input []string) []string {
 	var result []string
 
 	for _, x := range input {

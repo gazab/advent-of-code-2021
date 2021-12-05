@@ -38,8 +38,11 @@ func solver(day string, filePath string, debug bool) {
 		Solve03A(util.ReadFile(filePath), debug)
 		Solve03B(util.ReadFile(filePath), debug)
 	case "04":
-		//Solve04A(util.ReadFileDoubleNewlineSplit(filePath), debug)
+		Solve04A(util.ReadFileDoubleNewlineSplit(filePath), debug)
 		Solve04B(util.ReadFileDoubleNewlineSplit(filePath), debug)
+	case "05":
+		Solve05A(util.ReadFile(filePath), debug)
+		Solve05B(util.ReadFile(filePath), debug)
 	}
 }
 

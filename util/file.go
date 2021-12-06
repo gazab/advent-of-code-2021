@@ -17,6 +17,10 @@ func ReadFile(filepath string) []string {
 	return ReadFileDynamicSplit(filepath, "\n")
 }
 
+func ReadFileCommaSplit(filepath string) []string {
+	return ReadFileDynamicSplit(filepath, ",")
+}
+
 func ReadFileDoubleNewlineSplit(filepath string) []string {
 	return ReadFileDynamicSplit(filepath, "\n\n")
 }

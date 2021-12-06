@@ -8,6 +8,8 @@ import (
 	"github.com/gazab/advent-of-code-2021/util"
 )
 
+var debug = false
+
 func main() {
 
 	currentDay := GetDayString()
@@ -22,6 +24,8 @@ func main() {
 		fileName = "example.txt"
 	}
 	filePath := "./data/" + *dayPtr + "/" + fileName
+
+	debug = *debugPtr
 
 	solver(*dayPtr, filePath, *debugPtr)
 }
@@ -41,8 +45,11 @@ func solver(day string, filePath string, debug bool) {
 		Solve04A(util.ReadFileDoubleNewlineSplit(filePath), debug)
 		Solve04B(util.ReadFileDoubleNewlineSplit(filePath), debug)
 	case "05":
-		Solve05A(util.ReadFile(filePath), debug)
-		Solve05B(util.ReadFile(filePath), debug)
+		Solve05A(util.ReadFile(filePath))
+		Solve05B(util.ReadFile(filePath))
+	case "06":
+		//Solve06A(util.StringSliceToIntSlice(util.ReadFileCommaSplit(filePath)))
+		Solve06B(util.StringSliceToIntSlice(util.ReadFileCommaSplit(filePath)))
 	}
 }
 

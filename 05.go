@@ -9,15 +9,12 @@ import (
 )
 
 var coordRegex = regexp.MustCompile(`(?P<x1>\d*),(?P<y1>\d*) -> (?P<x2>\d*),(?P<y2>\d*)`)
-var debug = false
 
-func Solve05A(input []string, d bool) {
-	debug = d
+func Solve05A(input []string) {
 	solve(input, true)
 }
 
-func Solve05B(input []string, d bool) {
-	debug = d
+func Solve05B(input []string) {
 	solve(input, false)
 }
 

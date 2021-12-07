@@ -48,8 +48,11 @@ func solver(day string, filePath string, debug bool) {
 		Solve05A(util.ReadFile(filePath))
 		Solve05B(util.ReadFile(filePath))
 	case "06":
-		//Solve06A(util.StringSliceToIntSlice(util.ReadFileCommaSplit(filePath)))
+		Solve06A(util.StringSliceToIntSlice(util.ReadFileCommaSplit(filePath)))
 		Solve06B(util.StringSliceToIntSlice(util.ReadFileCommaSplit(filePath)))
+	case "07":
+		Solve07A(util.StringSliceToIntSlice(util.ReadFileCommaSplit(filePath)))
+		Solve07B(util.StringSliceToIntSlice(util.ReadFileCommaSplit(filePath)))
 	}
 }
 

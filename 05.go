@@ -63,7 +63,7 @@ func solve(input []string, onlyStraight bool) {
 			xPos := x1
 			yPos := y1
 
-			for true {
+			for {
 				if debug {
 					fmt.Printf("Marking : (%d,%d)\n", xPos, yPos)
 				}

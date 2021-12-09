@@ -211,5 +211,5 @@ func find_number_on_card(number int, card [][]bingosquare, mark bool) (int, int,
 		}
 	}
 
-	return 0, 0, errors.New("Number not found")
+	return 0, 0, errors.New("number not found")
 }

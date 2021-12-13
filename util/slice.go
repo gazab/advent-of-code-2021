@@ -17,6 +17,16 @@ func StringSliceToIntSlice(input []string) []int {
 	return result
 }
 
+func StringSliceToIntMatrix(input []string) [][]int {
+	var result [][]int
+
+	for _, x := range input {
+		result = append(result, StringSliceToIntSlice(strings.Split(x, "")))
+	}
+
+	return result
+}
+
 func BinaryStringSliceToIntSlice(input []string) []int {
 	var result []int
 

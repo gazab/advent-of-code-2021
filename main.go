@@ -61,6 +61,8 @@ func solver(day string, filePath string, debug bool) {
 		Solve09B(util.ReadFile(filePath))
 	case "10":
 		Solve10(util.ReadFile(filePath))
+	case "11":
+		Solve11A(util.StringSliceToIntMatrix(util.ReadFile(filePath)))
 	}
 }
 

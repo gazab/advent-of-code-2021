@@ -29,7 +29,21 @@ func print_matrix_footer(size int) {
 	fmt.Printf("╝\n")
 }
 
+type highlighter func(int) bool
+
+func standardHighlighter(x int) bool {
+	return x > 0
+}
+
+func standardBrighter(x int) bool {
+	return x > 1
+}
+
 func PrintMatrix(matrix [][]int, title string) {
+	PrintMatrixWithHightlighter(matrix, title, standardHighlighter, standardBrighter)
+}
+
+func PrintMatrixWithHightlighter(matrix [][]int, title string, fn highlighter, fn2 highlighter) {
 
 	size := len(matrix)
 
@@ -38,8 +52,11 @@ func PrintMatrix(matrix [][]int, title string) {
 		fmt.Print("║ ")
 		for col := 0; col < len(matrix[row]); col++ {
 			cell := matrix[row][col]
-			if cell > 0 {
-				ct.Foreground(ct.Red, cell > 1)
+			if fn(cell) {
+				ct.Foreground(ct.Red, fn2(cell))
+			}
+			if fn2(cell) {
+				ct.Foreground(ct.Red, true)
 			}
 			fmt.Printf("%2d ", cell)
 			ct.ResetColor()
